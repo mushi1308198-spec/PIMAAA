@@ -56,7 +56,7 @@ with tab1:
         diabetes_pedi = st.slider("Diabetes Pedigree Function", 0.0, 2.42, 0.5)
         age = st.slider("Age (years)", 21, 81, 40)
     
-    if st.button("🔍 Predict", use_container_width=True):
+    if st.button("🔍 Predict", use_container_width=True, key="predict_btn"):
         # Prepare input
         input_data = np.array([[pregnancies, glucose, diastolic_bp, triceps, 
                                 serum_insulin, bmi, diabetes_pedi, age]])
@@ -102,7 +102,7 @@ with tab2:
         })
     
     df_results = pd.DataFrame(results_data)
-    st.dataframe(df_results, use_container_width=True)
+    st.dataframe(df_results, use_container_width=True, key="results_table")
     
     col1, col2, col3, col4 = st.columns(4)
     
